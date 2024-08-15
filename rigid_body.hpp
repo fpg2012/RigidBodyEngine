@@ -1,5 +1,6 @@
 #pragma once
 
+#include "collision_box.hpp"
 #include "glm/ext/quaternion_geometric.hpp"
 #include "glm/matrix.hpp"
 #include <glm/glm.hpp>
@@ -31,6 +32,8 @@ struct RigidBody {
     glm::mat3 I0; // inertia tensor
     float M; // total mass
     glm::mat3 I;
+
+    CollisionBox cb;
 
     RBState to_state() const;
     void load_state(RBState &&state);
